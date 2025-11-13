@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 dotenv.config();
 const app = express();
 const api_key = process.env.WEATHERAPIKEY;
-const port = process.env.PORT;
+const port = process.env.PORT || 7842;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("Public"));
