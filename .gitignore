@@ -1,3 +1,4 @@
 /node_modules
 /Note_App
-/Weather-App/.env
+/Weather-App
+.env

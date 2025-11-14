@@ -1,0 +1,32 @@
+<%- include('./partials/header.ejs') %>
+<section class="container">
+  <h1>Insert Your Location/Country</h1>
+  <form class="submition" action="/weather" method="post">
+    <input type="text" name="location" id="location" autofocus>
+    <input type="submit" value="Check Weather">
+  </form>
+ <% if(locals.data){ %>
+    <div class="report-box">
+      <div class="rb-header">
+        <h3><%=data.city%>, <%=data.country%></h3>
+        <div><img src=<%=data.icon%> alt="WI"></div>
+      </div>
+      <div class="rb-report">
+        <h3>Weather Cast</h3>
+        <div class="rbr-info">
+          <div class="rbri rbri-dt">
+            <p>Date : <%=data.date%></p>
+            <p>Time : <%=data.time%></p>
+          </div>
+          <p class="rbri-critical">Weather Seems to be <%=data.description%>!</p>
+          <div class="rbri rbri-wsd">
+            <p>Wind Speed - <%=data.wind_speed%> KPH</p>
+            <p>Wind Direction : <%=data.wind_direction%></p>
+          </div>
+          <p class="rbri-critical">Temperature : <%=data.temperature%><sup>o</sup> Celcius.</p>
+        </div>
+      </div>
+    </div>
+<% } %>
+</section>
+<%- include('./partials/footer.ejs') %>

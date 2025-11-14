@@ -4,8 +4,9 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "node ./Weather-App/index.js",
-    "start": "node ./Weather-App/index.js"
+    "dev": "node index.js",
+    "start": "node index.js",
+    "build": "echo 'No build step needed'"
   },
   "keywords": [],
   "author": "",
@@ -16,8 +17,5 @@
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
-  },
-  "engines": {
-    "node": ">=18.x"
   }
 }
