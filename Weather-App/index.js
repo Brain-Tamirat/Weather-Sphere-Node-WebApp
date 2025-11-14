@@ -1,16 +1,26 @@
 import express from "express";
 import axios from "axios";
+import path from "path";
+import { fileURLToPath } from "url";
 import dotenv from "dotenv";
 
 dotenv.config();
 const app = express();
-const api_key = process.env.WEATHERAPIKEY;
+const api_key = process.env.API_KEY ;
 const port = process.env.PORT || 7842;
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename)
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static("Public"));
+app.use(express.static(path.join(__dirname,'public')));
+app.set('view engine','ejs');
+app.set('views',path.join(__dirname,'views'))
 
-app.get(["/", "/home"], async (req, res) => {
+app.get("/", async (req, res) => {
+  res.status(200).render("index.ejs");
+});
+
+app.get("/home", async (req, res) => {
   res.status(200).render("index.ejs");
 });
 

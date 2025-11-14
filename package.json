@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node Weather-App/weatherApp.js"
+    "dev": "node ./Weather-App/index.js",
+    "start": "node ./Weather-App/index.js"
   },
   "keywords": [],
   "author": "",
@@ -16,5 +16,8 @@
     "dotenv": "^17.2.3",
     "ejs": "^3.1.10",
     "express": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=18.x"
   }
 }
